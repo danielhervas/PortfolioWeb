@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <title>Portfolio de Desarrollador Web</title>
+  <script type="module" crossorigin src="/Portfolio/assets/main-B6yCGKhj.js"></script>
+  <link rel="stylesheet" crossorigin href="/Portfolio/assets/main-Bmus095h.css">
+</head>
+
+<body>
+  <header>
+    <h2>Daniel Hervás</h2>
+    <h4>Desarrollador Web</h4>
+    
+  </header>
+  
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>
+      Soy Técnico Superior en Desarrollo de Aplicaciones Web con una profunda pasión por las tecnologías, especialmente en el ámbito del back-end. Me motiva aprender constantemente y perfeccionar mis habilidades, explorando nuevas herramientas que impulsen mi crecimiento profesional. <br><br>Destaco por mi capacidad para trabajar en equipo, fomentando la colaboración y el intercambio de ideas para desarrollar soluciones eficientes e innovadoras. Aspiro a formar parte de entornos dinámicos donde pueda contribuir al éxito de proyectos creativos y desafiantes.</p>
+  </section>
+
+  <section id="proyectos">
+    <h2>Proyectos</h2>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide slide-1">
+          <h3>App de Criptomonedas mediante API</h3>
+          <a href="https://angelmrt.github.io/Cryptobros/" class="btn">Ver Proyecto</a>
+        </div>
+        <div class="swiper-slide slide-2">
+          <h3>Diseño Web, Agencia de Viajes</h3>
+          <a href="https://danielhervas.github.io/WebFigmaDanielHervas/" class="btn">Ver Proyecto</a>
+        </div>
+        
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+
+  <section id="educacion">
+    <h2>Tecnologías</h2>
+    <div>
+      <span class="span">Lenguajes de Programación y Marcas </span>➡️ Java, JavaScript, SQL, HTML y CSS.
+    </div>
+    <div>
+      <span class="span">Frameworks, Librerías y Otros</span> ➡️ Spring, Node.js, React, BootStrap, SCSS y Tailwind.
+    </div>
+    <div>
+      <span class="span">Herramientas y Plataformas</span> ➡️ Github, Oracle Cloud, Figma y Vite.
+    </div>
+  </section>
+
+  
+
+  
+
+  <section id="redes-sociales">
+    <h2>Redes Sociales</h2>
+    <div>
+      <a href="https://www.linkedin.com/in/daniel-herv%C3%A1s-mu%C3%B1oz-009822325/" target="_blank">
+        <img src="/Portfolio/assets/linkedin-DgLzhU7_.png" alt="Icono de GitHub"/>
+      </a>
+      <a href="https://github.com/danielhervas" target="_blank">
+        <img src="/Portfolio/assets/github%20(1)-DMbEH1hR.png" alt="Icono de GitHub"/>
+        
+      </a>
+    </div>
+    
+  </section>
+
+  <footer>
+    <p>&copy; Todos los derechos reservados.</p>
+  </footer>
+</body>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    loop: true, // Permite el bucle de las diapositivas
+    autoplay: {
+    delay: 5000, // Cambia de slide cada 3 segundos
+    disableOnInteraction: false, // Mantiene el autoplay después de interacción
+  },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    slidesPerView: 1, // Muestra una diapositiva a la vez
+    spaceBetween: 10, // Espacio entre las diapositivas
+  });
+</script>
+
+</html>

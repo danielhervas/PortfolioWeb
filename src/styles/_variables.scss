@@ -1,0 +1,23 @@
+
+
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$secondary-color2: rgb(0,255,191);
+$gray-color: #6fdba5;
+$white-color: #ffffff;
+$gris: #444444;
+$gris2: #dbdbdb;
+$negro: black;
+$negro2:rgb(20, 16, 16);
+$font-stack: 'Arial', sans-serif;
+$degradado-cajas: rgba(68, 26, 255, 0.6);
+$degradado-cajas2:rgba(23, 177, 82, 1);
+
+$gradiente-cajas: linear-gradient(to bottom, $degradado-cajas, $gris);
+$gradiente-cajas2: linear-gradient(to bottom, $degradado-cajas2, $negro2);
+
+$hover-background: linear-gradient(135deg, #c5c5c5, #1e1e1e);
+
+$gradiente-body: linear-gradient(to bottom, $white-color, $gris2);
+$font-stack: 'Arial', sans-serif;
+$header-height: 80px;

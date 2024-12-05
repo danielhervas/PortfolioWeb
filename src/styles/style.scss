@@ -1,0 +1,351 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *; 
+
+
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-stack;
+    margin: 0;
+    padding: 0;
+    background: $gradiente-body;
+    
+    #sobre-mi{
+        margin: 2rem 4rem;
+        h2{
+            
+            text-align: center;
+        }
+        p{
+            margin: 1rem 2rem;
+            text-align: initial;
+            font-size: 1.2rem;
+        }
+    }
+    #proyectos{
+        margin: 2rem 4rem;
+        h2{
+            text-align: center;
+
+        }
+        p{
+            text-align: center;
+        }
+    }
+    #educacion{
+        margin: 2rem 4rem;
+        h2{
+            text-align: center;
+
+        }
+        p{
+            text-align: center;
+        }
+        h3{
+            color: $white-color;
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+        div{
+            font-size: 1.2rem;
+            .span{
+                font-size: 1.2rem;
+                
+            }
+        }
+        
+
+        div{
+            color: $white-color;
+            margin: 2rem 2rem;
+            span{
+                font-weight: bold;
+            }
+        }
+       
+    }
+    #redes-sociales{
+        margin: 2rem 4rem;
+        
+        h2{
+            text-align: center;
+
+        }
+        p{
+           text-align: center;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            margin: 1rem 2rem;
+            img{
+                margin: 1rem;
+                width: 3rem;
+            }
+        }
+        
+    }
+    header {
+        height: 9rem; // Altura del header
+        background: $hover-background;
+        display: flex;
+        flex-direction: column; // Cambia a columna para apilar los h2 y h4
+        justify-content: center; // Centra verticalmente
+        align-items: center; // Centra horizontalmente
+        padding: 0 20px;
+        
+        position: relative;
+        z-index: 10;
+        transition: background-color 0.3s; // Transición para el cambio de fondo
+    
+        // Cambia el color del texto de los h2 y h4 al pasar el ratón sobre el header
+        &:hover h2, &:hover h4 {
+            color: $white-color; // Cambia a un color deseado
+        }
+    
+        h2 {
+            font-size: 36px; // Tamaño de fuente para h2
+            font-weight: bold;
+            font-style: italic;
+            color: $white-color; // Color inicial
+            letter-spacing: 2px;
+            position: relative;
+            transition: color 0.3s;
+            margin-top: 0.2rem; // Margen superior para h2
+    
+            // Subrayado automático
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 4px; // Altura del subrayado
+                background: $secondary-color; // Color del subrayado
+                left: 0;
+                bottom: -5px; // Posición del subrayado
+                transform: scaleX(1); // Comienza visible
+                animation: hideUnderline 4s forwards; // Animación para ocultar el subrayado
+            }
+    
+            // Animación para cambiar el color del texto
+            animation: textColorChange 3s infinite alternate; // Cambia el color automáticamente
+        }
+    
+        h4 {
+            font-size: 20px; // Tamaño de fuente para h4
+            color: $white-color; // Color inicial
+            transition: color 0.3s;
+            margin-top: 0px; // Espacio reducido entre h2 y h4
+            font-style: italic;
+        }
+    
+        a {
+            margin-top: 10px; // Espaciado entre el h4 y el enlace
+            img {
+                width: 3rem; // Ajusta el tamaño del icono de GitHub
+                height: 3rem;
+            }
+        }
+    }
+    
+    // Animación para ocultar el subrayado
+    @keyframes hideUnderline {
+        0% {
+            transform: scaleX(1); // Comienza visible
+        }
+        100% {
+            transform: scaleX(0); // Se oculta
+        }
+    }
+    
+    // Animación para cambiar el color del texto
+    @keyframes textColorChange {
+        0% {
+            color: $white-color; // Color inicial
+        }
+        100% {
+            color: $secondary-color2; // Color final
+        }
+    }
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: $secondary-color;
+        color: white;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+   
+}
+
+
+
+.swiper-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .swiper-wrapper {
+        display: flex;
+    }
+
+    .swiper-slide {
+        @include flex-center;
+        flex-direction: column; // Asegúrate de que los elementos se apilen verticalmente
+        text-align: center; // Centrar el texto
+    
+        h3 {
+            margin-top: 6rem; // Espaciado superior
+            color: $white-color;
+            background: $gradiente-cajas;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+    
+        .btn {
+            display: inline-block; // Permite que el botón tenga un tamaño adecuado
+            margin-top: 10px; // Espaciado superior
+            padding: 10px 20px; // Espaciado interno
+            border: 1px solid $negro;
+            background: $gradiente-cajas2;
+            color: $white-color;
+            text-decoration: none; // Sin subrayado
+            border-radius: 1rem; // Bordes redondeados
+            transition: background-color 0.3s; // Transición para el cambio de color
+    
+            &:hover {
+                background: $gradiente-cajas; // Color de fondo al pasar el ratón
+                color: $white-color;
+            }
+        }
+    }
+    // Clase para la primera diapositiva
+    .slide-1 {
+        background-image: url('../assets/images/appCrypto_.png'); // Cambia esta ruta a tu imagen
+        background-size: cover; // Para que la imagen cubra toda la diapositiva
+        background-position: center; // Centra la imagen
+        border-radius: 4rem;
+        width: 100%;
+        height: 100%; // Asegúrate de que ocupe toda la altura de la diapositiva
+        display: flex; // Para centrar el contenido
+        justify-content: center; // Centrar horizontalmente
+        align-items: center; // Centrar verticalmente
+        color: white; // Cambiar el color del texto si es necesario
+        h4{
+            margin-top: 6rem;
+            color: $white-color;
+            background: $gradiente-cajas;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+        
+    }
+    .slide-2{
+        background-image: url('../assets/images/Agencia_Viajes.png'); // Cambia esta ruta a tu imagen
+        background-size: cover; // Para que la imagen cubra toda la diapositiva
+        background-position: center; // Centra la imagen
+        width: 100%;
+        height: 100%; // Asegúrate de que ocupe toda la altura de la diapositiva
+        display: flex; // Para centrar el contenido
+        justify-content: center; // Centrar horizontalmente
+        align-items: center; // Centrar verticalmente
+        color: white; // Cambiar el color del texto si es necesario
+        border-radius: 4rem;
+        h4{
+            margin-top: 6rem;
+            color: $white-color;
+            background: $gradiente-cajas;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $primary-color;
+        width: 30px;
+        height: 30px;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+
+        &:hover {
+            background-color: $secondary-color;
+            color: white;
+        }
+    }
+
+    .swiper-button-next {
+        right: 10px;
+    }
+
+    .swiper-button-prev {
+        left: 10px;
+    }
+    
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background: $gradiente-cajas;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 2rem;
+    
+    
+    h2 {
+        color: $negro;
+        
+    }
+    p{
+        color: $white-color;
+    }
+}
+
+footer{
+    background: $hover-background;
+}
+
+@include responsive(mobile) {
+    section {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+}
+
+@include responsive(tablet) {
+    section {
+        margin: 15px;
+        padding: 18px;
+    }
+}
+
+@include responsive(desktop) {
+    section {
+        margin: 20px;
+        padding: 20px;
+    }
+}
