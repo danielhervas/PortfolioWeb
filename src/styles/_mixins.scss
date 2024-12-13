@@ -1,19 +1,29 @@
 // Breakpoints y mixin
 @use "sass:map";
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (min-width: 1024px){
+    $normal-font-size: 1rem;
+}
+
 @mixin responsive($breakpoint) {
-  @if $breakpoint == mobile {
-      @media (max-width: 600px) {
-          @content;
-      }
-  }
-  @else if $breakpoint == tablet {
-      @media (min-width: 601px) and (max-width: 900px) {
-          @content;
-      }
-  }
-  @else if $breakpoint == desktop {
-      @media (min-width: 901px) {
-          @content;
-      }
-  }
+    @if $breakpoint == mobile {
+        @media (max-width: 600px) {
+            @content;
+        }
+    }
+    @else if $breakpoint == tablet {
+        @media (min-width: 601px) and (max-width: 900px) {
+            @content;
+        }
+    }
+    @else if $breakpoint == desktop {
+        @media (min-width: 901px) {
+            @content;
+        }
+    }
 }

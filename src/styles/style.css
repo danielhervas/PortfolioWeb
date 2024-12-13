@@ -1,38 +1,182 @@
+@charset "UTF-8";
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
+/*===== VARIABLES CSS EFECTO NEÓN =====*/
+/*========== Font and typography ==========*/
+/*========== Box, Drop & Text Shadow ==========*/
+/*========== Box, Drop & Text Shadow Hover ==========*/
+/*========== Filter Blur ==========*/
+/*===== VARIABLES CSS EFECTO NEÓN =====*/
+:root {
+  /*========== Colors ==========*/
+  --body-color: #020318;
+  --text-color2:#999bc2;
+  --text-color-light: #FFF;
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --biggest-font-size: 2rem;
+  --biggest2-font-size: 1.8rem;
+  --h1-font-size: 1.5rem;
+  --normal-font-size: 1.4rem;
+  --smaller-font-size: .75rem;
+  /*========== Box, Drop & Text Shadow ==========*/
+  --box-shadow-inset: inset 0 22px 56px -36px rgba(255, 255, 255, .5),
+                      inset 0 4px 5px -4px rgba(255, 255, 255, 1),
+                      inset 0 -31px 34px -32px rgba(96, 68, 144, .3),
+                      inset 0 39px 50px -34px rgba(202, 172, 255, .3),
+                      inset 0 2px 9px rgba(154, 146, 210, .3),
+                      inset 0 1px 10px rgba(227, 222, 255, .2);
+  --drop-shadow: 0 0 8px rgba(161, 165, 247, .8);
+  --text-shadow: 0 0 8px rgba(161, 165, 247, .8);
+  --box-shadow-inset-button: inset 0 2px 7px -9px rgba(255, 255, 255, .5),
+                             inset 0 1px 2px -1px rgba(255, 255, 255, 1),
+                             inset 0 -20px 16px -32px rgba(96, 68, 144, .3),
+                             inset 0 28px 25px -24px rgba(202, 172, 255, .3),
+                             inset 0 1px 4px rgba(154, 146, 210, .3),
+                             inset 0 1px 10px rgba(227, 222, 255, .2);
+  /*========== Box, Drop & Text Shadow Hover ==========*/
+  --box-shadow-inset-hover: inset 0 19px 28px -18px rgba(255, 255, 255, .5),
+                            inset 0 4px 6px -3px rgba(255, 255, 255, 1),
+                            inset 0 -51px 44px -42px rgba(96, 68, 144, .3),
+                            inset 0 59px 60px -32px rgba(202, 172, 255, .3),
+                            inset 0 4px 16px rgba(154, 146, 210, .3),
+                            inset 0 2px 25px rgba(227, 222, 255, .23);
+  --drop-shadow-hover: 0 0 14px rgba(161, 165, 247, .8);
+  --text-shadow-hover: 0 0 14px rgba(161, 165, 247, .8);
+  --box-shadow-inset-button-hover: inset 0 4px 7px -4px rgba(255, 255, 255, .5),
+                                   inset 0 1px 2px -1px rgba(255, 255, 255, 1),
+                                   inset 0 -20px 16px -32px rgba(96, 68, 144, .3),
+                                   inset 0 28px 25px -20px rgba(202, 172, 255, .3),
+                                   inset 0 1px 4px rgba(154, 146, 210, .3),
+                                   inset 0 1px 16px rgba(227, 222, 255, .2);
+  /*========== Filter Blur ==========*/
+  --filter-blur: blur(100px) ;
+}
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
 
+.div-header {
+  font-size: var(--biggest-font-size);
+  text-shadow: var(--text-shadow);
+  font-family: var(--body-font);
+  color: var(--text-color-light);
+  text-align: center;
+  padding: 2rem;
+}
+.div-header div h1 {
+  margin-bottom: -4rem;
+}
+.div-header h4 {
+  color: var(--text-color2);
+  text-shadow: none;
+}
+
 body {
   font-family: "Arial", sans-serif;
+  color: var(--body-color);
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #ffffff, #dbdbdb);
+  background-color: rgb(39, 37, 48);
 }
 body #sobre-mi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 2rem 4rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.01);
+  color: var(--text-color-light);
+  box-shadow: var(--box-shadow-inset);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 body #sobre-mi h2 {
+  text-shadow: var(--text-shadow);
+  color: var(--text-color-light);
+  margin-top: 0rem;
+  text-align: center;
+  font-family: "Parkinsans", sans-serif;
+}
+body #sobre-mi .contenido {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+body #sobre-mi .contenido .div {
   text-align: center;
 }
-body #sobre-mi p {
-  margin: 1rem 2rem;
+body #sobre-mi .contenido .div img {
+  margin-top: 0rem;
+  width: 95%;
+  border-radius: 8rem;
+}
+body #sobre-mi .contenido p {
+  font-family: "Parkinsans", sans-serif;
   text-align: initial;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  margin: 0;
+}
+body #sobre-mi:hover {
+  transform: scale(1.03);
+  box-shadow: var(--box-shadow-inset);
+  z-index: 1;
+}
+@media (max-width: 600px) {
+  body #sobre-mi .contenido {
+    flex-direction: column;
+  }
+  body #sobre-mi .contenido .div img {
+    width: 60%;
+  }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  body #sobre-mi .contenido {
+    flex-direction: column;
+  }
+  body #sobre-mi .contenido .div img {
+    width: 35%;
+  }
 }
 body #proyectos {
-  margin: 2rem 4rem;
+  margin: 0rem;
+  transition: transform 0.5s ease;
+  background: transparent;
+  border: none;
+  border-radius: 16px;
+  box-shadow: none;
 }
 body #proyectos h2 {
   text-align: center;
+  font-family: "Parkinsans", sans-serif;
 }
 body #proyectos p {
   text-align: center;
 }
+body #proyectos:hover {
+  transform: scale(1.03);
+  z-index: 1;
+}
 body #educacion {
   margin: 2rem 4rem;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  font-family: "Parkinsans", sans-serif;
+  background: rgba(255, 255, 255, 0.01);
+  color: var(--text-color-light);
+  box-shadow: var(--box-shadow-inset);
 }
 body #educacion h2 {
   text-align: center;
+  text-shadow: var(--text-shadow);
+  font-family: var(--body-font);
+  color: var(--text-color-light);
 }
 body #educacion p {
   text-align: center;
@@ -55,11 +199,23 @@ body #educacion div {
 body #educacion div span {
   font-weight: bold;
 }
+body #educacion:hover {
+  transform: scale(1.03);
+  box-shadow: var(--box-shadow-inset);
+  z-index: 1;
+}
 body #redes-sociales {
   margin: 2rem 4rem;
+  transition: transform 0.5s ease;
+  background: rgba(255, 255, 255, 0.01);
+  color: var(--text-color-light);
+  box-shadow: var(--box-shadow-inset);
 }
 body #redes-sociales h2 {
   text-align: center;
+  text-shadow: var(--text-shadow);
+  font-family: var(--body-font);
+  color: var(--text-color-light);
 }
 body #redes-sociales p {
   text-align: center;
@@ -73,74 +229,15 @@ body #redes-sociales div img {
   margin: 1rem;
   width: 3rem;
 }
-body header {
-  height: 9rem;
-  background: linear-gradient(135deg, #c5c5c5, #1e1e1e);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  position: relative;
-  z-index: 10;
-  transition: background-color 0.3s;
-}
-body header:hover h2, body header:hover h4 {
-  color: #ffffff;
-}
-body header h2 {
-  font-size: 36px;
-  font-weight: bold;
-  font-style: italic;
-  color: #ffffff;
-  letter-spacing: 2px;
-  position: relative;
-  transition: color 0.3s;
-  margin-top: 0.2rem;
-  animation: textColorChange 3s infinite alternate;
-}
-body header h2::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  background: #2ecc71;
-  left: 0;
-  bottom: -5px;
-  transform: scaleX(1);
-  animation: hideUnderline 4s forwards;
-}
-body header h4 {
-  font-size: 20px;
-  color: #ffffff;
-  transition: color 0.3s;
-  margin-top: 0px;
-  font-style: italic;
-}
-body header a {
-  margin-top: 10px;
-}
-body header a img {
-  width: 3rem;
-  height: 3rem;
-}
-@keyframes hideUnderline {
-  0% {
-    transform: scaleX(1);
-  }
-  100% {
-    transform: scaleX(0);
-  }
-}
-@keyframes textColorChange {
-  0% {
-    color: #ffffff;
-  }
-  100% {
-    color: rgb(0, 255, 191);
-  }
+body #redes-sociales:hover {
+  transform: scale(1.03);
+  box-shadow: var(--box-shadow-inset);
+  z-index: 1;
 }
 body footer {
+  background: rgba(255, 255, 255, 0.01);
+  color: var(--text-color-light);
+  box-shadow: var(--box-shadow-inset);
   text-align: center;
   padding: 10px;
   background-color: #2ecc71;
@@ -153,10 +250,11 @@ body footer {
 .swiper-container {
   position: relative;
   width: 100%;
-  max-width: 800px;
+  max-width: 1220px;
   height: 300px;
   margin: 0 auto;
   overflow: hidden;
+  border-radius: 16px;
 }
 .swiper-container .swiper-wrapper {
   display: flex;
@@ -169,15 +267,17 @@ body footer {
   text-align: center;
 }
 .swiper-container .swiper-slide h3 {
+  font-size: var(--biggest2-font-size);
   margin-top: 6rem;
-  color: #ffffff;
-  background: linear-gradient(to bottom, rgba(68, 26, 255, 0.6), #444444);
+  text-shadow: var(--text-shadow);
+  font-family: var(--body-font);
+  color: var(--text-color-light);
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 16px;
 }
 .swiper-container .swiper-slide .btn {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 0px;
   padding: 10px 20px;
   border: 1px solid black;
   background: linear-gradient(to bottom, rgb(23, 177, 82), rgb(20, 16, 16));
@@ -191,16 +291,22 @@ body footer {
   color: #ffffff;
 }
 .swiper-container .slide-1 {
+  box-shadow: var(--box-shadow-inset);
   background-image: url("../assets/images/appCrypto_.png");
   background-size: cover;
   background-position: center;
-  border-radius: 4rem;
+  border-radius: 16px;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
+}
+.swiper-container .slide-1 h2 {
+  text-shadow: var(--text-shadow);
+  font-family: var(--body-font);
+  color: var(--text-color-light);
 }
 .swiper-container .slide-1 h4 {
   margin-top: 6rem;
@@ -210,6 +316,7 @@ body footer {
   border-radius: 0.5rem;
 }
 .swiper-container .slide-2 {
+  box-shadow: var(--box-shadow-inset);
   background-image: url("../assets/images/Agencia_Viajes.png");
   background-size: cover;
   background-position: center;
@@ -219,7 +326,12 @@ body footer {
   justify-content: center;
   align-items: center;
   color: white;
-  border-radius: 4rem;
+  border-radius: 16px;
+}
+.swiper-container .slide-2 h2 {
+  text-shadow: var(--text-shadow);
+  font-family: var(--body-font);
+  color: var(--text-color-light);
 }
 .swiper-container .slide-2 h4 {
   margin-top: 6rem;
@@ -261,23 +373,31 @@ section {
   padding: 20px;
   background: linear-gradient(to bottom, rgba(68, 26, 255, 0.6), #444444);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
-  border-radius: 2rem;
+  border-radius: 16px;
 }
 section h2 {
   color: black;
+  font-family: "Parkinsans", sans-serif;
 }
 section p {
   color: #ffffff;
-}
-
-footer {
-  background: linear-gradient(135deg, #c5c5c5, #1e1e1e);
 }
 
 @media (max-width: 600px) {
   section {
     margin: 10px;
     padding: 15px;
+  }
+  .div-header {
+    font-size: var(--normal-font-size);
+    text-shadow: var(--text-shadow);
+    font-family: var(--body-font);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 2rem;
+  }
+  .div-header div h1 {
+    margin-bottom: -2.3rem;
   }
 }
 @media (min-width: 601px) and (max-width: 900px) {

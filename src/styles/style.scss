@@ -1,184 +1,312 @@
 @use '../styles/variables' as *;
-@use '../styles/mixins' as *; 
+@use '../styles/mixins' as *;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
 
+/*===== VARIABLES CSS EFECTO NEÓN =====*/
+:root{
 
-// Mixins
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /*========== Colors ==========*/
+    --body-color: #020318;
+    --text-color2:#999bc2;
+    --text-color-light: #FFF;
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    --biggest-font-size: 2rem;
+    --biggest2-font-size: 1.8rem;
+    
+    --h1-font-size: 1.5rem;
+    --normal-font-size: 1.4rem;
+    --smaller-font-size: .75rem;
+
+    @media screen and (min-width: 1024px){
+        --normal-font-size: 1rem;
+    }
+    
+    /*========== Box, Drop & Text Shadow ==========*/
+    --box-shadow-inset: inset 0 22px 56px -36px rgba(255, 255, 255, .5), 
+                        inset 0 4px 5px -4px rgba(255, 255, 255, 1), 
+                        inset 0 -31px 34px -32px rgba(96, 68, 144, .3), 
+                        inset 0 39px 50px -34px rgba(202, 172, 255, .3), 
+                        inset 0 2px 9px rgba(154, 146, 210, .3), 
+                        inset 0 1px 10px rgba(227, 222, 255, .2);;
+
+    --drop-shadow: 0 0 8px rgba(161, 165, 247, .8);
+
+    --text-shadow: 0 0 8px rgba(161, 165, 247, .8);
+
+    --box-shadow-inset-button: inset 0 2px 7px -9px rgba(255, 255, 255, .5), 
+                               inset 0 1px 2px -1px rgba(255, 255, 255, 1), 
+                               inset 0 -20px 16px -32px rgba(96, 68, 144, .3), 
+                               inset 0 28px 25px -24px rgba(202, 172, 255, .3), 
+                               inset 0 1px 4px rgba(154, 146, 210, .3), 
+                               inset 0 1px 10px rgba(227, 222, 255, .2);
+
+    /*========== Box, Drop & Text Shadow Hover ==========*/
+    --box-shadow-inset-hover: inset 0 19px 28px -18px rgba(255, 255, 255, .5), 
+                              inset 0 4px 6px -3px rgba(255, 255, 255, 1), 
+                              inset 0 -51px 44px -42px rgba(96, 68, 144, .3), 
+                              inset 0 59px 60px -32px rgba(202, 172, 255, .3), 
+                              inset 0 4px 16px rgba(154, 146, 210, .3), 
+                              inset 0 2px 25px rgba(227, 222, 255, .23);
+
+    --drop-shadow-hover:  0 0 14px rgba(161, 165, 247, .8);
+
+    --text-shadow-hover: 0 0 14px rgba(161, 165, 247, .8);
+
+    --box-shadow-inset-button-hover: inset 0 4px 7px -4px rgba(255, 255, 255, .5), 
+                                     inset 0 1px 2px -1px rgba(255, 255, 255, 1), 
+                                     inset 0 -20px 16px -32px rgba(96, 68, 144, .3), 
+                                     inset 0 28px 25px -20px rgba(202, 172, 255, .3), 
+                                     inset 0 1px 4px rgba(154, 146, 210, .3), 
+                                     inset 0 1px 16px rgba(227, 222, 255, .2); 
+
+    /*========== Filter Blur ==========*/
+    --filter-blur: blur(100px)
 }
-
 
 
 * {
     box-sizing: border-box;
+    
 }
 
+.div-header{
+    
+    font-size: var(--biggest-font-size);
+    text-shadow: var(--text-shadow);
+    font-family: var(--body-font);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 2rem;
+    div{
+        h1{
+            margin-bottom: -4rem;
+
+        }
+        
+    }
+    h4{
+        color: var(--text-color2);
+        text-shadow:none;
+    }
+    
+}
 body {
     font-family: $font-stack;
+    color: var(--body-color);
     margin: 0;
     padding: 0;
-    background: $gradiente-body;
+    background-color: $gradiente-body;
     
-    #sobre-mi{
+
+
+
+    #sobre-mi {
+        display: flex;
+        flex-direction: column;
+        align-items: center; // Centrar horizontalmente el título
+    
         margin: 2rem 4rem;
-        h2{
+        padding: 2rem; 
+        background: rgba(255,255,255,.01);
+        color: var(--text-color-light);
+        box-shadow: var(--box-shadow-inset);    
+        transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    
+        h2 {
+            text-shadow: var(--text-shadow);
             
+            color: var(--text-color-light);
+            
+            margin-top: 0rem;
             text-align: center;
+            font-family: $parkinsans-uniquifier-font-family;
         }
-        p{
-            margin: 1rem 2rem;
-            text-align: initial;
-            font-size: 1.2rem;
+    
+        .contenido {
+            
+            display: flex;
+            flex-direction: row; // Organiza imagen y texto en filas
+            align-items: center; // Alinea verticalmente
+            gap: 2rem; // Espaciado entre la imagen y el texto
+            .div {
+                text-align: center;
+    
+                img {
+                    margin-top: 0rem;
+                    width: 95%;
+                    border-radius: 8rem;
+                }
+            }
+    
+            p {
+                font-family: $parkinsans-uniquifier-font-family;               
+                text-align: initial;
+                font-size: 1.1rem;
+                margin: 0; // Asegúrate de que el texto no tenga margen adicional
+            }
+        }
+    
+        // Efecto al hacer hover
+        &:hover {
+            transform: scale(1.03); // Aumentar tamaño
+            box-shadow: var(--box-shadow-inset);
+            z-index: 1; // Asegurarse de que el contenedor esté por encima de otros elementos
         }
     }
-    #proyectos{
-        margin: 2rem 4rem;
-        h2{
-            text-align: center;
-
+    @include responsive(mobile) {
+        #sobre-mi {
+          .contenido {
+            flex-direction: column; // Cambia a columna para apilar la imagen y el texto
+            .div{
+                img{
+                    width: 60%;
+                }
+            }
+          }
         }
-        p{
+      }
+      
+      @include responsive(tablet) {
+        #sobre-mi {
+          .contenido {
+            flex-direction: column; // Cambia a columna para apilar la imagen y el texto
+            .div{
+                img{
+                    width: 35%;
+                }
+            }
+          }
+        }
+      }
+    
+
+
+ 
+   
+    // Sección Proyectos
+    #proyectos {
+        margin: 0rem;
+        transition: transform 0.5s ease;//,box-shadow 0.5s ease; 
+        background:transparent;
+        border: none;
+        border-radius: 16px;
+        box-shadow: none;
+        
+        h2 {
             text-align: center;
+            font-family: $parkinsans-uniquifier-font-family;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        // Efecto al hacer hover
+        &:hover {
+            transform: scale(1.03); // Aumentar tamaño
+            
+            z-index: 1; // Asegurarse de que esté por encima de otros elementos
         }
     }
-    #educacion{
-        margin: 2rem 4rem;
-        h2{
-            text-align: center;
 
-        }
-        p{
+    // Sección Educación
+    #educacion {
+        margin: 2rem 4rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease; // Transiciones para hover
+        font-family: $parkinsans-uniquifier-font-family;
+        background: rgba(255,255,255,.01);
+        color: var(--text-color-light);
+        box-shadow: var(--box-shadow-inset);
+        h2 {
             text-align: center;
+            text-shadow: var(--text-shadow);
+            font-family: var(--body-font);
+            color: var(--text-color-light);
         }
-        h3{
+
+        p {
+            text-align: center;
+            
+        }
+
+        h3 {
             color: $white-color;
             text-align: center;
             margin-top: 2.5rem;
         }
-        div{
+
+        div {
             font-size: 1.2rem;
-            .span{
+
+            .span {
                 font-size: 1.2rem;
-                
             }
         }
-        
 
-        div{
+        div {
             color: $white-color;
             margin: 2rem 2rem;
-            span{
+
+            span {
                 font-weight: bold;
             }
         }
-       
-    }
-    #redes-sociales{
-        margin: 2rem 4rem;
-        
-        h2{
-            text-align: center;
 
+        // Efecto al hacer hover
+        &:hover {
+            transform: scale(1.03); // Aumentar tamaño
+            box-shadow: var(--box-shadow-inset);
+            z-index: 1; // Asegurarse de que esté por encima de otros elementos
         }
-        p{
-           text-align: center;
+    }
+
+    // Sección Redes Sociales
+    #redes-sociales {
+        margin: 2rem 4rem;
+        transition: transform 0.5s ease; // Transiciones para hover
+        background: rgba(255,255,255,.01);
+        color: var(--text-color-light);
+        box-shadow: var(--box-shadow-inset);
+
+        h2 {
+            text-align: center;
+            text-shadow: var(--text-shadow);
+            font-family: var(--body-font);
+            color: var(--text-color-light);
         }
-        div{
+
+        p {
+            text-align: center;
+        }
+
+        div {
             display: flex;
             justify-content: center;
             margin: 1rem 2rem;
-            img{
+
+            img {
                 margin: 1rem;
                 width: 3rem;
             }
         }
-        
-    }
-    header {
-        height: 9rem; // Altura del header
-        background: $hover-background;
-        display: flex;
-        flex-direction: column; // Cambia a columna para apilar los h2 y h4
-        justify-content: center; // Centra verticalmente
-        align-items: center; // Centra horizontalmente
-        padding: 0 20px;
-        
-        position: relative;
-        z-index: 10;
-        transition: background-color 0.3s; // Transición para el cambio de fondo
-    
-        // Cambia el color del texto de los h2 y h4 al pasar el ratón sobre el header
-        &:hover h2, &:hover h4 {
-            color: $white-color; // Cambia a un color deseado
-        }
-    
-        h2 {
-            font-size: 36px; // Tamaño de fuente para h2
-            font-weight: bold;
-            font-style: italic;
-            color: $white-color; // Color inicial
-            letter-spacing: 2px;
-            position: relative;
-            transition: color 0.3s;
-            margin-top: 0.2rem; // Margen superior para h2
-    
-            // Subrayado automático
-            &::after {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 4px; // Altura del subrayado
-                background: $secondary-color; // Color del subrayado
-                left: 0;
-                bottom: -5px; // Posición del subrayado
-                transform: scaleX(1); // Comienza visible
-                animation: hideUnderline 4s forwards; // Animación para ocultar el subrayado
-            }
-    
-            // Animación para cambiar el color del texto
-            animation: textColorChange 3s infinite alternate; // Cambia el color automáticamente
-        }
-    
-        h4 {
-            font-size: 20px; // Tamaño de fuente para h4
-            color: $white-color; // Color inicial
-            transition: color 0.3s;
-            margin-top: 0px; // Espacio reducido entre h2 y h4
-            font-style: italic;
-        }
-    
-        a {
-            margin-top: 10px; // Espaciado entre el h4 y el enlace
-            img {
-                width: 3rem; // Ajusta el tamaño del icono de GitHub
-                height: 3rem;
-            }
+
+        // Efecto al hacer hover
+        &:hover {
+            transform: scale(1.03); // Aumentar tamaño
+            box-shadow: var(--box-shadow-inset);
+            z-index: 1; // Asegurarse de que esté por encima de otros elementos
         }
     }
+
     
-    // Animación para ocultar el subrayado
-    @keyframes hideUnderline {
-        0% {
-            transform: scaleX(1); // Comienza visible
-        }
-        100% {
-            transform: scaleX(0); // Se oculta
-        }
-    }
-    
-    // Animación para cambiar el color del texto
-    @keyframes textColorChange {
-        0% {
-            color: $white-color; // Color inicial
-        }
-        100% {
-            color: $secondary-color2; // Color final
-        }
-    }
     footer {
+        background: rgba(255,255,255,.01);
+        color: var(--text-color-light);
+        box-shadow: var(--box-shadow-inset);
         text-align: center;
         padding: 10px;
         background-color: $secondary-color;
@@ -188,18 +316,18 @@ body {
         width: 100%;
     }
    
+
+
 }
-
-
 
 .swiper-container {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 1220px;
     height: 300px;
     margin: 0 auto;
     overflow: hidden;
-
+    border-radius: 16px;
     .swiper-wrapper {
         display: flex;
     }
@@ -208,18 +336,22 @@ body {
         @include flex-center;
         flex-direction: column; // Asegúrate de que los elementos se apilen verticalmente
         text-align: center; // Centrar el texto
+        
     
         h3 {
+            
+            font-size: var(--biggest2-font-size);
             margin-top: 6rem; // Espaciado superior
-            color: $white-color;
-            background: $gradiente-cajas;
+            text-shadow: var(--text-shadow);
+            font-family: var(--body-font);
+            color: var(--text-color-light);
             padding: 0.5rem;
-            border-radius: 0.5rem;
+            border-radius: 16px;
         }
     
         .btn {
             display: inline-block; // Permite que el botón tenga un tamaño adecuado
-            margin-top: 10px; // Espaciado superior
+            margin-top: 0px; // Espaciado superior
             padding: 10px 20px; // Espaciado interno
             border: 1px solid $negro;
             background: $gradiente-cajas2;
@@ -236,16 +368,22 @@ body {
     }
     // Clase para la primera diapositiva
     .slide-1 {
+        box-shadow: var(--box-shadow-inset);   
         background-image: url('../assets/images/appCrypto_.png'); // Cambia esta ruta a tu imagen
         background-size: cover; // Para que la imagen cubra toda la diapositiva
         background-position: center; // Centra la imagen
-        border-radius: 4rem;
+        border-radius: 16px;
         width: 100%;
         height: 100%; // Asegúrate de que ocupe toda la altura de la diapositiva
         display: flex; // Para centrar el contenido
         justify-content: center; // Centrar horizontalmente
         align-items: center; // Centrar verticalmente
         color: white; // Cambiar el color del texto si es necesario
+        h2{
+            text-shadow: var(--text-shadow);
+            font-family: var(--body-font);
+            color: var(--text-color-light);
+        }
         h4{
             margin-top: 6rem;
             color: $white-color;
@@ -256,6 +394,7 @@ body {
         
     }
     .slide-2{
+        box-shadow: var(--box-shadow-inset);   
         background-image: url('../assets/images/Agencia_Viajes.png'); // Cambia esta ruta a tu imagen
         background-size: cover; // Para que la imagen cubra toda la diapositiva
         background-position: center; // Centra la imagen
@@ -265,7 +404,12 @@ body {
         justify-content: center; // Centrar horizontalmente
         align-items: center; // Centrar verticalmente
         color: white; // Cambiar el color del texto si es necesario
-        border-radius: 4rem;
+        border-radius: 16px;
+        h2{
+            text-shadow: var(--text-shadow);
+            font-family: var(--body-font);
+            color: var(--text-color-light);
+        }
         h4{
             margin-top: 6rem;
             color: $white-color;
@@ -312,11 +456,12 @@ section {
     padding: 20px;
     background: $gradiente-cajas;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
-    border-radius: 2rem;
+    border-radius: 16px;
     
     
     h2 {
         color: $negro;
+        font-family: $parkinsans-uniquifier-font-family;
         
     }
     p{
@@ -324,15 +469,30 @@ section {
     }
 }
 
-footer{
-    background: $hover-background;
-}
+
 
 @include responsive(mobile) {
     section {
         margin: 10px;
         padding: 15px;
     }
+    
+.div-header{
+    
+    font-size: var(--normal-font-size);
+    text-shadow: var(--text-shadow);
+    font-family: var(--body-font);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 2rem;
+    div{
+        h1{
+            margin-bottom: -2.3rem;
+        }
+    }
+    
+}
+    
     
 }
 
