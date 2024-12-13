@@ -95,7 +95,7 @@ body #sobre-mi {
   background: rgba(255, 255, 255, 0.01);
   color: var(--text-color-light);
   box-shadow: var(--box-shadow-inset);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 body #sobre-mi h2 {
   text-shadow: var(--text-shadow);
@@ -166,7 +166,7 @@ body #proyectos:hover {
 }
 body #educacion {
   margin: 2rem 4rem;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   font-family: "Parkinsans", sans-serif;
   background: rgba(255, 255, 255, 0.01);
   color: var(--text-color-light);
@@ -413,4 +413,4 @@ section p {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */
